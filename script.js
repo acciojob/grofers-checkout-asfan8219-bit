@@ -13,12 +13,16 @@ const getSum = () => {
         console.log(item.textContent)
         totalAmount +=Number(item.textContent)
 
-		    console.log(totalAmount)
-        const tr = document.createElement("tr");
-            const td = document.createElement("td");
-         td.textContent = "Total Price: " + totalAmount;
-          tr.appendChild(td)
-          document.querySelector("table").appendChild(tr);
+	const tr = document.createElement("tr");
+
+    const td = document.createElement("td");
+
+    td.textContent = "Total Price: " + totalAmount;
+
+    tr.appendChild(td);
+
+    document.querySelector("table").appendChild(tr);
+         
     })
   
 };
