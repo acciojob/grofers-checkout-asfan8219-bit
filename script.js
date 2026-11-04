@@ -9,24 +9,28 @@ const getSum = () => {
     // Check if total row already exists
     if (document.querySelector("#totalRow")) {
         return;
-    }
-  const itemsprice = document.querySelectorAll(".prices")
+const itemsPrice = document.querySelectorAll(".prices")
+    let totalAmount = 0
 
-        let totalamount = 0
-        itemsprice.forEach((item)=>{
-            totalamount = totalamount + Number(item.textContent)
-            console.log(totalamount)
-        })
+    itemsPrice.forEach((item)=>{
+        console.log(item.textContent)
+        totalAmount += Number(item.textContent)
+    })
 
-        const tr = document.createElement("tr")
-	     tr.id = "totalRow"
 
-        const td = document.createElement("td")
+    const tr = document.createElement("tr")
 
-        td.textContent = "totalprice:" + totalamount
-        tr.appendChild(td)
+    const td1 = document.createElement("td")
+    td1.textContent = "TotalAmount"
 
-        document.querySelector("table").appendChild(tr)
+    const td2 = document.createElement("td")
+    td2.textContent = totalAmount
+
+
+
+    tr.append(td1,td2)
+
+    document.querySelector("table").appendChild(tr)
 
 };
 
