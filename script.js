@@ -1,15 +1,5 @@
-const getSumBtn = document.createElement("button");
 
-getSumBtn.append("Get Total Price");
-
-document.body.appendChild(getSumBtn);
-
-const getSum = () => {
-
-    // Check if total row already exists
-    if (document.querySelector("#totalRow")) {
-        return;
-const itemsPrice = document.querySelectorAll(".prices")
+    const itemsPrice = document.querySelectorAll(".prices")
     let totalAmount = 0
 
     itemsPrice.forEach((item)=>{
@@ -32,7 +22,4 @@ const itemsPrice = document.querySelectorAll(".prices")
 
     document.querySelector("table").appendChild(tr)
 
-};
-
-getSumBtn.addEventListener("click", getSum);
 
