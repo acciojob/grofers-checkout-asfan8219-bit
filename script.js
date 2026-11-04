@@ -1,19 +1,30 @@
 const getSumBtn = document.createElement("button");
+
 getSumBtn.append("Get Total Price");
+
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-//Add your code here
 
-	 const itemsPrice = document.querySelectorAll(".prices")
+    // Check if total row already exists
+    if (document.querySelector("#totalRow")) {
+        return;
+    }
 
-    let totalAmount = 0
+    const itemsPrice = document.querySelectorAll(".prices");
 
-    itemsPrice.forEach((item)=>{
-        console.log(item.textContent)
-        totalAmount +=Number(item.textContent)
+    let totalAmount = 0;
 
-	const tr = document.createElement("tr");
+    itemsPrice.forEach((item) => {
+        console.log(item.textContent);
+
+        totalAmount += Number(item.textContent);
+    });
+
+    // Create row outside the loop
+    const tr = document.createElement("tr");
+
+    tr.id = "totalRow";
 
     const td = document.createElement("td");
 
@@ -22,9 +33,7 @@ const getSum = () => {
     tr.appendChild(td);
 
     document.querySelector("table").appendChild(tr);
-         
-    })
-  
+
 };
 
 getSumBtn.addEventListener("click", getSum);
