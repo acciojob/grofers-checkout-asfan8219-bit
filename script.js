@@ -19,6 +19,7 @@ const getSum = () => {
         })
 
         const tr = document.createElement("tr")
+	     tr.id = "totalRow"
 
         const td = document.createElement("td")
 
