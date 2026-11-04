@@ -10,29 +10,22 @@ const getSum = () => {
     if (document.querySelector("#totalRow")) {
         return;
     }
+  const itemsprice = document.querySelectorAll(".prices")
 
-    const itemsPrice = document.querySelectorAll(".prices");
+        let totalamount = 0
+        itemsprice.forEach((item)=>{
+            totalamount = totalamount + Number(item.textContent)
+            console.log(totalamount)
+        })
 
-    let totalAmount = 0;
+        const tr = document.createElement("tr")
 
-    itemsPrice.forEach((item) => {
-        console.log(item.textContent);
+        const td = document.createElement("td")
 
-        totalAmount += Number(item.textContent);
-    });
+        td.textContent = "totalprice:" + totalamount
+        tr.appendChild(td)
 
-    // Create row outside the loop
-    const tr = document.createElement("tr");
-
-    tr.id = "totalRow";
-
-    const td = document.createElement("td");
-
-    td.textContent = "Total Price: " + totalAmount;
-
-    tr.appendChild(td);
-
-    document.querySelector("table").appendChild(tr);
+        document.querySelector("table").appendChild(tr)
 
 };
 
